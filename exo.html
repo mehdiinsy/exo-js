@@ -7,17 +7,60 @@
     <link rel="stylesheet" href="exo.css">
     <title>Document</title>
 </head>
-<body>
+<body onkeyup="if(event.key=='ArrowDown'){descendre()}else{if(event.key=='ArrowUp'){monter()}}">
     
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias, sapiente voluptas! Voluptates, totam tempora cumque labore harum eaque obcaecati necessitatibus minima, nam quisquam mollitia est aspernatur unde. Debitis, eveniet voluptates?</p>
 
 <button onclick="change_style()"> changer style </button> <br><br><br>
 
-<img id="ragnar" src="/img/ragnar.jpg">
+<img id="ragnar" src="/img/ragnar.jpg" alt="oups image introuvable"><br><br>
+
+<button onclick="alert('btn')" >alerte btn</button>
+
+<button onclick="" >background</button>
+
+<button onclick="style='none'">normale</button>
+<br><br>
+
+<!-- changer d'image au survol de celle-ci -->
 
 
+<img id="ecran" src="img/shelby.jpg" alt="oups pas d'image" 
+onmouseover="document.getElementById('ecran').src='img/vane.jpg'"
+onmouseout="document.getElementById('ecran').setAttribute('src', 'img/shelby.jpg')">
 
 
+<!-- set interval
+
+<div ></div>
+
+<img onload="t=setInterval('alterner()', 2000)" src="img/ragnar.jpg" alt="oups pas d'image" id='rag'>
+<button onclick="clearInterval(t)">stop</button>
+<button onclick="t=setInterval('alterner()', 2000)">reprendre</button>
+
+
+</div> -->
+
+<!-- diapo -->
+
+<!-- <div onload="t=setInterval('alterner()', 2000)"></div>
+
+<img src="img/ragnar.jpg" alt="oups pas d'image" id='rag'>
+<br><br>
+<button onclick="precedent()">precedent</button>
+<button onclick="suivant()">suivant</button>
+
+
+</div> -->
+
+
+<!-- deplacement d'image -->
+
+<img src="img/vane.jpg" alt="pas'image" id="img1" width="500" height="300"><br>
+<img src="img/ragnar.jpg" alt="pas'image" id="img2" width="500" height="300"><br>
+<img src="img/shelby.jpg" alt="pas'image" id="img3" width="500" height="300"><br>
+<button onclick="monter()">monter</button>
+<button onclick="descendre()">descendre</button>
 
 
 

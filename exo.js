@@ -72,21 +72,22 @@ else {
 
 
   //=======================================================exo3
-
 //   let a;
-//  do{
-//     a=prompt("Saisissez un nombre entier");
-//  }while(isNaN(a) || a%1!==0);
- 
-//  document.write("<h4>La table de multiplication du nombre: "+a+"</h4>")
-//  document.write("<table border >");
-
+//   // do{
+//   //   a=prompt("Saisissez un nombre entier");
+//   // }while(isNaN(a) || a%1!==0);
+  
+//   document.write("<h4>La table de multiplication du nombre: "+a+"</h4>")
+//   document.write("<table border >");
+  
+//   for(let j=0;j<=10;j++){
+    
 //  for(let i=1;i<=10;i++){
 //     document.write("<tr>"); //tableau
-//     document.write("<td>"+a+" x "+i+" =</td>"); //multiplication
-//     document.write("<td>"+a*i+"</td>"); //resultat
+//     document.write("<td>"+j+" x "+i+" =</td>"); //multiplication
+//     document.write("<td>"+j*i+"</td>"); //resultat
 //     document.write("</tr>");//ferme le tableau
-//  }
+//  }}
 //  document.write("</table>");
 //Source : www.exelib.net
 
@@ -108,3 +109,75 @@ else {
 
 //===============================================exo 4
 
+// afficher une alerte a l'appui d'une touche :
+
+// window.addEventListener("keypress", x)
+
+// function x(e) {
+//   console.log(e);
+//   if(e.keyCode==100){
+//     alert("touche d")
+//   }
+//   console.log(e);
+// }
+
+
+// set interval
+
+let flag=0;
+function alterner(){
+  if(flag==0){
+    document.getElementById('rag').src="img/shelby.jpg";
+    flag=1;
+  }
+  else{
+    document.getElementById('rag').src="img/ragnar.jpg";
+    flag=0;
+  }
+}
+
+// diapo
+
+// let photos= ["vane.jpg","shelby.jpg","ragnar.jpg"]
+// let indice= 0
+// function suivant(){
+//   indice++
+//   if(indice==photos.length){
+//     indice=0
+//   }
+//   document.getElementById('rag').src="img/" + photos[indice]
+// }
+// function precedent(){
+//   indice--
+//   if(indice<0){
+//     indice= photos.length-1
+//   }
+//   document.getElementById('rag').src="img/" + photos[indice]
+// }
+
+
+// deplacement img
+
+let nbimages=3
+let position=1
+function descendre(){
+  let vane1="img"+position
+  position++
+  if(position>nbimages){
+    position=1
+  }
+  let suiv="img"+ position
+  document.getElementById(vane1).src=document.getElementById(suiv).src
+  document.getElementById(suiv).src="img/vane.jpg"
+}
+
+function monter(){
+  let vane1 = "img"+position
+  position--
+  if(position<1) {
+    position=nbimages
+  }
+  let preced = "img"+ position
+  document.getElementById(vane1).src=document.getElementById(preced).src
+  document.getElementById(preced).src= "img/vane.jpg"
+}
